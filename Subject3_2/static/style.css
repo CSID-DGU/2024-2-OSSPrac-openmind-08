@@ -1,0 +1,91 @@
+/* 공통 스타일 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* 밝은 파스텔 블루 */
+    color: #4a4a4a;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 메인 타이틀 */
+.main-title {
+    font-size: 2em;
+    line-height: 1.5;
+    color: #6b92b9; /* 파스텔톤 진한 파랑 */
+    margin: 40px 0 20px;
+}
+
+/* 컨테이너: 학생 정보 카드 */
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    margin-bottom: 20px;
+}
+
+/* 학생 정보 카드 스타일 */
+.student-block {
+    background-color: #f8f1ff; /* 부드러운 파스텔 퍼플 */
+    padding: 15px;
+    border: 1px solid #d3c4e3;
+    border-radius: 8px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    color: #5c5c8a;
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    border: none;
+    background-color: #a8dadc; /* 파스텔 민트 */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #457b9d;
+}
+
+/* 푸터 스타일 */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+}
+
+footer h5 {
+    margin: 0;
+}
+
+/* 추가 입력 필드 블록 */
+.person-block {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #e0e8f0; /* 파스텔 그레이 블루 */
+    color: #4a4a8a;
+}
