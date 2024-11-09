@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팀원 정보 입력</title>
+</head>
+<body>
+    <h1>팀원 정보 입력</h1>
+    <form action="/result" method="POST">
+        <p>Name: <input type="text" name="name" required></p>
+        <p>Student Number: <input type="text" name="StudentNumber" required></p>
+        <p>Gender:
+            <select name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </p>
+        <p>Programming Languages:</p>
+        <p><input type="checkbox" name="languages" value="Python"> Python</p>
+        <p><input type="checkbox" name="languages" value="JavaScript"> JavaScript</p>
+        <p><input type="checkbox" name="languages" value="Java"> Java</p>
+        <p><input type="checkbox" name="languages" value="C++"> C++</p>
+        <p><input type="checkbox" name="languages" value="Ruby"> Ruby</p>
+        <button type="submit" name="submit" value="submit">Submit</button>
+    </form>
+</body>
+</html>
