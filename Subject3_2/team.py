@@ -5,13 +5,12 @@ app = Flask(__name__)
 # 최초 메인 페이지를 보여주는 루트 경로
 @app.route('/')
 def index():
-    return render_template('index.html')  # 위 HTML 코드를 form.html 파일로 저장해야 합니다
+    return render_template('index.html')
 
 # 학생 정보를 입력하는 경로
-
 @app.route('/input')
 def input():
-   return render_template('input.html')
+    return render_template('input.html')
 
 # 제출된 데이터를 처리하여 출력하는 경로
 @app.route('/result', methods=['POST'])
@@ -23,9 +22,11 @@ def result():
     # 데이터를 템플릿으로 전달하여 출력 페이지 생성
     return render_template('result.html', students=zip(names, student_numbers))
 
-#@app.route('/contact')
-#def contact_info():
-    #return render_template('app_contact.html')
+# 팀원 연락처를 제공하는 페이지
+@app.route('/contact')
+def contact_info():
+    # 연락처 정보 페이지 렌더링
+    return render_template('contact.html') 
 
 if __name__ == '__main__':
     app.run(debug=True)

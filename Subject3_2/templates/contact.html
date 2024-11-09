@@ -6,6 +6,53 @@
     <title>팀 연락처</title>
     <!-- CSS 파일 링크 -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .main-title {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 36px;
+            color: #2c3e50;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .student-block {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+            text-align: left;
+        }
+        .student-block p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+        .student-block strong {
+            color: #2980b9;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        footer h5 {
+            font-weight: normal;
+        }
+    </style>
 </head>
 <body>
     <h1 class="main-title">팀 연락처</h1>
@@ -27,7 +74,7 @@
     </div>
 
     <footer>
-        <h5>이 페이지는 8조의 연락 정보를 제공합니다. 궁금한 사항이 있으면 이메일로 연락해주세요!</h5>
+        <h5>이 페이지는 8조(openmind)의 연락 정보를 제공합니다. 이메일로 연락해주세요!</h5>
     </footer>
 </body>
 </html>
