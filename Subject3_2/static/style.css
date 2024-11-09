@@ -3,11 +3,10 @@
 
 body {
     font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f4f7fc; /* 밝은 파스텔 블루 */
+    color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f0f8ff; /* 밝은 파스텔 블루 */
-    color: #4a4a4a;
-    line-height: 1.6;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,36 +15,40 @@ body {
 
 /* 메인 타이틀 */
 .main-title {
-    font-size: 2em;
-    line-height: 1.5;
-    color: #6b92b9; /* 파스텔톤 진한 파랑 */
-    margin: 40px 0 20px;
+    font-size: 36px;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 30px;
 }
 
-/* 컨테이너: 학생 정보 카드 */
+/* 컨테이너: 팀원 정보 */
 .container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    max-width: 80%;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
 }
 
-/* 학생 정보 카드 스타일 */
+/* 팀원 정보 카드 스타일 */
 .student-block {
-    background-color: #f8f1ff; /* 부드러운 파스텔 퍼플 */
-    padding: 15px;
-    border: 1px solid #d3c4e3;
+    background-color: #ffffff;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
     border-radius: 8px;
-    width: 180px;
-    text-align: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    color: #5c5c8a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.student-block p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #4a4a4a;
+}
+
+.student-block strong {
+    color: #2980b9; /* 파스텔 블루 */
 }
 
 /* 버튼 스타일 */
@@ -68,24 +71,16 @@ button:hover {
 /* 푸터 스타일 */
 footer {
     text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #7f8c8d;
     padding: 15px;
     background-color: #333;
     color: white;
-    margin-top: 30px;
-    width: 100%;
     border-radius: 0 0 8px 8px;
 }
 
 footer h5 {
     margin: 0;
-}
-
-/* 추가 입력 필드 블록 */
-.person-block {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #e0e8f0; /* 파스텔 그레이 블루 */
-    color: #4a4a8a;
+    font-weight: normal;
 }
