@@ -16,18 +16,19 @@
     </script>
 </head>
 <body>
-    <h1 class="main-title">학생 정보 출력</h1>
+    <h1 class="main-title">8조 정보 출력</h1>
     <div class="container">
-        {% for name, student_number in students %}
+        {% for name, StudentNumber, major in students %}
             <div class="student-block">
                 <p><strong>이름:</strong> {{ name }}</p>
-                <p><strong>학번:</strong> {{ student_number }}</p>
+                <p><strong>학번:</strong> {{ StudentNumber }}</p>
+                <p><strong>전공:</strong> {{ major}}</p>
             </div>
         {% endfor %}
     </div>
     <footer>
         <h5>📞 안내: 
-            <button onclick="showContactInfo()" aria-label="팀 긴급연락">팀 긴급연락</button>
+            <button onclick="showContactInfo()" aria-label="팀 긴급연락">팀장 긴급연락처</button>
             <button onclick="openContactPage()" aria-label="팀 연락정보">팀 연락정보</button>
         </h5>
     </footer> 

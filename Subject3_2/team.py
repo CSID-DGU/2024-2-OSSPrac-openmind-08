@@ -18,9 +18,11 @@ def result():
     # 각 학생의 이름과 학번 데이터를 리스트로 받음
     names = request.form.getlist('name[]')
     student_numbers = request.form.getlist('StudentNumber[]')
+    majors = request.form.getlist('major[]')
+
 
     # 데이터를 템플릿으로 전달하여 출력 페이지 생성
-    return render_template('result.html', students=zip(names, student_numbers))
+    return render_template('result.html', students=zip(names, student_numbers, majors))
 
 # 팀원 연락처를 제공하는 페이지
 @app.route('/contact')

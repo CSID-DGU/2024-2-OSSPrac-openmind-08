@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>학생 정보 입력</title>
+    <title>팀원 정보 입력</title>
     
     <!-- CSS 파일 링크 -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <style>
-
-    </style>
 </head>
 <body>
-    <h1>학생 정보 입력</h1>
+    <h1>팀원 정보 입력</h1>
     <form action="/result" method="POST" id="studentForm">
         <div id="personContainer">
             <div class="person-block">
                 <p>이름: <input type="text" name="name[]" required></p>
                 <p>학번: <input type="text" name="StudentNumber[]" required></p>
+                <p>전공: <input type="text" name="major[]" required></p>
             </div>
         </div>
         <button type="button" onclick="addPerson()">추가</button>
@@ -35,6 +33,7 @@
             personBlock.innerHTML = `
                 <p>이름: <input type="text" name="name[]" required></p>
                 <p>학번: <input type="text" name="StudentNumber[]" required></p>
+                <p>전공: <input type="text" name="major[]" required></p>
             `;
 
             // 입력 블록을 personContainer에 추가
