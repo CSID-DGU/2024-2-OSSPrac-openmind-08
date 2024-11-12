@@ -77,10 +77,15 @@ footer {
     padding: 15px;
     background-color: #333;
     color: white;
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px;
 }
 
 footer h5 {
     margin: 0;
     font-weight: normal;
+}
+
+/* 비디오 스타일 */
+.video-container {
+    margin-top: 40px;
 }
