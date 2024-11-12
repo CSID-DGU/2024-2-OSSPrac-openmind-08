@@ -15,9 +15,9 @@ def result():
         result = dict()
         result['Name'] = request.form.get('name')
         result['StudentNumber'] = request.form.get('StudentNumber')
-        result['Gender'] = request.form.get('gender')  # 팀원 1
-        result['Programming Languages'] = request.form.getlist('languages')  # 팀원 2
-        result['Programming Languages'] = ', '.join(result['Programming Languages'])  # 목록을 문자열로 변환
+        result['Gender'] = request.form.get('gender') 
+        result['Major'] = request.form.get('major') 
+
         return render_template('result.html', result=result)
 
 if __name__ == '__main__':
