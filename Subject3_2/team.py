@@ -19,10 +19,11 @@ def result():
     names = request.form.getlist('name[]')
     student_numbers = request.form.getlist('StudentNumber[]')
     majors = request.form.getlist('major[]')
+    role = request.form.getlist('role[]')
 
 
     # 데이터를 템플릿으로 전달하여 출력 페이지 생성
-    return render_template('result.html', students=zip(names, student_numbers, majors))
+    return render_template('result.html', students=zip(names, student_numbers, majors, role))
 
 # 팀원 연락처를 제공하는 페이지
 @app.route('/contact')
