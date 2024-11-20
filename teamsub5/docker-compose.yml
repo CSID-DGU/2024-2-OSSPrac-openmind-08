@@ -1,0 +1,13 @@
+# docker-compose.yml
+
+version: "3.0"
+
+services:
+  frontapp:
+    build: ./FrontEnd/app
+    image: yooheejun/frontapp:latest
+    ports:
+      - "80:80"
+
+  backapp:
+    build: ./BackEnd

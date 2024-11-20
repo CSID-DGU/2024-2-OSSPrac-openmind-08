@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팀 구성원 정보 출력</title>
+    <!-- CSS 파일 링크 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        function showContactInfo() {
+            alert("긴급전화: 010-1234-5678");
+        }
+        function openContactPage() {
+            window.open("/contact", "contactPage", "width=600,height=400");
+        }
+    </script>
+</head>
+<body>
+    <h1 class="main-title">8조 정보 출력</h1>
+    <div class="container">
+        {% for name, StudentNumber, major, role in students %}
+            <div class="student-block">
+                <p><strong>이름:</strong> {{ name }}</p>
+                <p><strong>학번:</strong> {{ StudentNumber }}</p>
+                <p><strong>전공:</strong> {{ major}}</p>
+                <p><strong>역할:</strong> {{ role}}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <footer>
+        <h5>📞 안내: 
+            <button onclick="showContactInfo()" aria-label="팀 긴급연락">팀장 긴급연락처</button>
+            <button onclick="openContactPage()" aria-label="팀 연락정보">팀 연락정보</button>
+        </h5>
+    </footer> 
+</body>
+</html>
