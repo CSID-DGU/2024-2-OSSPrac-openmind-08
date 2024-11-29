@@ -5,6 +5,10 @@ pipeline {
         pollSCM('*/3 * * * *')
     }
     
+    environment {
+        DOCKER_CREDS = credentials('docker-hub')
+    }
+    
     stages {
         stage('Prepare') {
             steps {                         
@@ -17,6 +21,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir('teamsub6'){
+                    sh 'echo $DOCKER_CREDS_PSW  | docker login -u $DOCKER_CREDS_USR  --password-stdin'
                     sh 'docker compose build frontapp'
                 }
             }
@@ -24,18 +29,14 @@ pipeline {
 
         stage('Tag') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USR', passwordVariable: 'DOCKER_PSW')]) {
-                    sh "docker tag teamsub6-frontapp $DOCKER_USR/teamsub6-frontapp:$BUILD_NUMBER"
-                }
+                sh 'docker tag teamsub6-frontapp $DOCKER_CREDS_USR/teamsub6-frontapp:$BUILD_NUMBER'
             }
         }
 
         stage('Push') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USR', passwordVariable: 'DOCKER_PSW')]) {
-                    sh "echo $DOCKER_PSW | docker login -u $DOCKER_USR --password-stdin"
-                    sh "docker push $DOCKER_USR/teamsub6-frontapp:$BUILD_NUMBER"
-                }
+                sh 'echo $DOCKER_CREDS_PSW | docker login -u $DOCKER_CREDS_USR  --password-stdin'
+                sh 'docker push $DOCKER_CREDS_USR/teamsub6-frontapp:$BUILD_NUMBER'
             }
         }
     }
