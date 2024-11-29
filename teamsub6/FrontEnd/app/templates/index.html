@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24-2 오픈소스 소프트웨어 실습</title>
+    <!-- CSS 파일 링크 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+
+    </style>
+    <script>
+        function showContactInfo() {
+            alert("팀장 긴급전화: 010-1234-5678");
+        }
+        function openContactPage() {
+            window.open("/contact", "contactPage", "width=600,height=400");
+        }
+        function openInputPage() {
+            window.open("/input", "InputPage", "width=800,height=600");
+        }
+    </script>
+</head>
+<body>
+    <h1 class="main-title">24-2 오픈소스 소프트웨어 실습<br>8조 Openmind 팀원 정보 출력</h1>
+    <div class="container">
+        <div class="student-block">
+            <p><strong>이름:</strong> </p>
+            <p><strong>학번:</strong> </p>
+            <p><strong>전공:</strong> </p>
+            <p><strong>역할:</strong> </p>
+        </div>        
+    </div>
+    <h3>팀 구성원 정보 입력 페이지 <button onclick="openInputPage()">이동</button></h3>
+    <footer>
+        <h5>📞 안내: <button onclick="showContactInfo()">팀 긴급연락</button> 
+            <button onclick="openContactPage()">팀 연락정보</button></h5>
+    </footer>
+    
+    <!-- 비디오 블록 -->
+    <div class="video-container">
+        <video 
+            poster="https://homepagemedia.dongguk.edu/path/to/image.jpg" 
+            id="video_0" 
+            muted 
+            preload="none" 
+            playsinline 
+            autoplay 
+            loop 
+            data-slick-index="0">
+            <source src="https://homepagemedia.dongguk.edu/main/kor/main_kor_24110601.mp4#t=0.001" type="video/mp4">
+        </video>
+    </div>
+</body>
+</html>
