@@ -17,7 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir('teamsub6'){
-                    sh 'docker compose build python-app'
+                    sh 'docker compose build frontapp'
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
         stage('Tag') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USR', passwordVariable: 'DOCKER_PSW')]) {
-                    sh "docker tag teamsub6-python-app $DOCKER_USR/teamsub6-python-app:$BUILD_NUMBER"
+                    sh "docker tag teamsub6-frontapp $DOCKER_USR/teamsub6-frontapp:$BUILD_NUMBER"
                 }
             }
         }
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USR', passwordVariable: 'DOCKER_PSW')]) {
                     sh "echo $DOCKER_PSW | docker login -u $DOCKER_USR --password-stdin"
-                    sh "docker push $DOCKER_USR/teamsub6-python-app:$BUILD_NUMBER"
+                    sh "docker push $DOCKER_USR/teamsub6-frontapp:$BUILD_NUMBER"
                 }
             }
         }
