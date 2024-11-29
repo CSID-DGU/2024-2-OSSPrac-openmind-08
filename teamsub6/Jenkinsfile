@@ -22,8 +22,7 @@ pipeline {
             steps {
                 dir('teamsub6'){
                     sh 'echo $DOCKER_CREDS_PSW  | docker login -u $DOCKER_CREDS_USR  --password-stdin'
-                    sh 'docker compose build frontapp'
-                    sh 'docker compose build backapp'
+                    sh 'docker compose build'
                 }
             }
         }
