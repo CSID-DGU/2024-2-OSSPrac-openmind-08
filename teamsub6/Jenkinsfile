@@ -23,6 +23,7 @@ pipeline {
                 dir('teamsub6'){
                     sh 'echo $DOCKER_CREDS_PSW  | docker login -u $DOCKER_CREDS_USR  --password-stdin'
                     sh 'docker compose build frontapp'
+                    sh 'docker compose build backapp'
                 }
             }
         }
@@ -30,6 +31,7 @@ pipeline {
         stage('Tag') {
             steps {
                 sh 'docker tag teamsub6-frontapp $DOCKER_CREDS_USR/teamsub6-frontapp:$BUILD_NUMBER'
+                sh 'docker tag teamsub6-backapp $DOCKER_CREDS_USR/teamsub6-backapp:$BUILD_NUMBER'
             }
         }
 
@@ -37,6 +39,7 @@ pipeline {
             steps {
                 sh 'echo $DOCKER_CREDS_PSW | docker login -u $DOCKER_CREDS_USR  --password-stdin'
                 sh 'docker push $DOCKER_CREDS_USR/teamsub6-frontapp:$BUILD_NUMBER'
+                sh 'docker push $DOCKER_CREDS_USR/teamsub6-backapp:$BUILD_NUMBER'
             }
         }
     }
